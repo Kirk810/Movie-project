@@ -8,7 +8,7 @@ export const UserContextProvider = ({ children }) => {
   const navigate = useNavigate();
   const login = (data) => {
     setUser(data);
-    navigate('/about');
+    navigate('/movies');
   };
 
   const logout = () => {

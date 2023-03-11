@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 const ButtonStyled = styled.button`
   background-color: ${({ variant }) => variant};
+  background-image: "url('../../public/utils/placeholder.png')";
+  background-size: cover;
   border: ${({ border }) => (border === 'yes' ? '2px solid black' : 'none')};
   color: ${({ color }) => (color === 'white' ? 'white' : 'black')};
   width: fit-content;
@@ -9,6 +11,8 @@ const ButtonStyled = styled.button`
   font-size: ${({ size }) =>
     size === 'lg' ? '25px' : size === 'sm' ? '14px' : size === 'xm' ? '10px' : '16px'};
   font-weight: 700;
+  gap: 5px;
+  height: 15vw;
   letter-spacing: 0.5px;
   outline: none;
   padding: ${({ size }) =>

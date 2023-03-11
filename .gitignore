@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 
+prueba-tecnica-react-developer
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
