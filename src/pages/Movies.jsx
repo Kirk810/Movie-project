@@ -17,12 +17,11 @@ const Movies = () => {
       .then((res) => setMovies(res.entries));
 
     setError(false);
-    movies.map((show) => show.programType === 'movie' && list.push(show));
-    const movieToPrint = list.filter((show) => show.releaseYear >= 2010);
-    movieToPrint.splice(20);
-    const copiedMovies = [...movieToPrint];
-    const moviesSorted = copiedMovies.sort((a, b) => (a.title < b.title ? -1 : +1));
-    setFilteredMovie(moviesSorted);
+    movies.map((movie) => movie.programType === 'movie' && list.push(movie));
+    const arrayMovies = list.filter((movie) => movie.releaseYear >= 2010);
+    const copyMovies = [...arrayMovies];
+    const sortMovies = copyMovies.sort((a, b) => (a.title < b.title ? -1 : +1));
+    setFilteredMovie(sortMovies);
     setLoaded(true);
   };
   useEffect(() => {

@@ -17,12 +17,12 @@ const Series = () => {
       .then((res) => setSeries(res.entries));
 
     setError(false);
-    series.map((show) => show.programType.includes('filtedSerie') && list.push(show));
-    const serieToPrint = list.filter((show) => show.releaseYear >= 2010);
-    serieToPrint.splice(20);
-    const copiedSeries = [...serieToPrint];
-    const seriesSorted = copiedSeries.sort((a, b) => (a.title < b.title ? -1 : +1));
-    setFilteredSerie(seriesSorted);
+    series.map((serie) => serie.programType === 'series' && list.push(serie));
+    const arraySeries = list.filter((serie) => serie.releaseYear >= 2010);
+    arraySeries.splice(20);
+    const copySeries = [...arraySeries];
+    const sortSeries = copySeries.sort((a, b) => (a.title < b.title ? -1 : +1));
+    setFilteredSerie(sortSeries);
     setLoaded(true);
   };
   useEffect(() => {
