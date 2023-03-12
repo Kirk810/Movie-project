@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledMain = styled.main`
+const StyledGallery = styled.div`
   background-color: ${({ background }) => background};
   background-image: ${({ image }) => image};
   color: #000000;
@@ -52,7 +52,7 @@ const Gallery = ({
   padding,
 }) => {
   return (
-    <StyledMain
+    <StyledGallery
       background={background}
       direction={direction}
       justify={justify}
@@ -64,7 +64,7 @@ const Gallery = ({
       padding={padding}
     >
       {children}
-    </StyledMain>
+    </StyledGallery>
   );
 };
 export default Gallery;
