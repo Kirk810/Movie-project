@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
+import Gallery from '../ui-components/Gallery';
 import SeriesCard from '../ui-components/SeriesCard';
 
 const Series = () => {
   const [series, setSeries] = useState([]);
   const [filtedSerie, setFilteredSerie] = useState([]);
-  const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(true);
   let list = [];
 
@@ -23,7 +23,6 @@ const Series = () => {
     const copySeries = [...arraySeries];
     const sortSeries = copySeries.sort((a, b) => (a.title < b.title ? -1 : +1));
     setFilteredSerie(sortSeries);
-    setLoaded(true);
   };
   useEffect(() => {
     getSeries();
@@ -31,15 +30,14 @@ const Series = () => {
 
   return (
     <div>
-      <h1>Series</h1>
-      <div className="Series">
-        {!loaded ? (
-          <h2>Loading...</h2>
-        ) : (
+      <h1> Popular Series</h1>
+      <Gallery margin={'100px 80px'}>
+        {filtedSerie.length ? (
           filtedSerie.map((serie) => <SeriesCard serie={serie} key={serie.id} />)
+        ) : (
+          <h2>Loading...</h2>
         )}
-        {error && <h2>Oops, something went wrong...</h2>}
-      </div>
+      </Gallery>
     </div>
   );
 };

@@ -6,13 +6,16 @@ const CardStyled = styled.div`
     display: none !important;
   }
   & .front {
-    color: whitesmoke;
     position: relative;
     border: solid 1px white;
     border-radius: 10px;
     box-shadow: 0 0 15px;
-    background-color: #466e85;
     width: 200px;
+    color: #000000;
+    :hover {
+      box-shadow: 0 0 15px 0 white;
+      transition: all 0.3s ease-in-out;
+    }
   }
   & .front > img {
     height: 250px;
@@ -92,7 +95,7 @@ const MovieCard = ({ movie }) => {
               setModal(!modal);
             }}
           >
-            Caracterisiticas
+            Attributes
           </button>
         </div>
 

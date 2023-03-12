@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const ButtonStyled = styled.button`
   background-color: ${({ variant }) => variant};
-  background-image: "url('../../public/utils/placeholder.png')";
   background-size: cover;
   border: ${({ border }) => (border === 'yes' ? '2px solid black' : 'none')};
   color: ${({ color }) => (color === 'white' ? 'white' : 'black')};

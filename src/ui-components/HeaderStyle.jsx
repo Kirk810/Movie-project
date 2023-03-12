@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const HeaderStyled = styled.header`
   display: flex;
-  flex-direction: column;
   justify-content: ${({ justify }) =>
     justify === 'center'
       ? 'center'
@@ -32,8 +31,13 @@ const HeaderStyled = styled.header`
   color: ${({ color }) => (color ? color : 'inherit')};
   height: ${({ height }) => height};
   width: 100%;
-  height: 10vw;
+  height: 6vw;
   padding: ${({ padding }) => padding};
+
+  & h1 {
+    font-size: 50px;
+    display: flex;
+  }
 `;
 
 const HeaderStyle = ({ children, justify, align, color, height, padding, variant }) => {

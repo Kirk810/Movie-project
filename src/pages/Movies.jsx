@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
+import Gallery from '../ui-components/Gallery';
 import MovieCard from '../ui-components/MovieCard';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [filtedMovie, setFilteredMovie] = useState([]);
-  const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(true);
   let list = [];
 
@@ -22,7 +22,6 @@ const Movies = () => {
     const copyMovies = [...arrayMovies];
     const sortMovies = copyMovies.sort((a, b) => (a.title < b.title ? -1 : +1));
     setFilteredMovie(sortMovies);
-    setLoaded(true);
   };
   useEffect(() => {
     getMovies();
@@ -30,15 +29,14 @@ const Movies = () => {
 
   return (
     <div>
-      <h1>Movies</h1>
-      <div className="Movies">
-        {!loaded ? (
-          <h2>Loading...</h2>
-        ) : (
+      <h1>Popular Movies</h1>
+      <Gallery margin={'100px 80px'}>
+        {filtedMovie.length ? (
           filtedMovie.map((movie) => <MovieCard movie={movie} key={movie.id} />)
+        ) : (
+          <h2>Loading...</h2>
         )}
-        {error && <h2>Oops, something went wrong...</h2>}
-      </div>
+      </Gallery>
     </div>
   );
 };
