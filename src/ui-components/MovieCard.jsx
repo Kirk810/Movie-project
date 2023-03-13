@@ -45,10 +45,10 @@ const CardStyled = styled.div`
   }
   & .modal-container {
     display: flex;
+    color: white;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
     width: 40%;
     padding: 2rem;
     gap: 2rem;
@@ -75,10 +75,6 @@ const CardStyled = styled.div`
     background-color: #000000dd;
     border: 2px solid #33d6c9;
     border-radius: 5px;
-  }
-  & .imgmodalDiv {
-    justify-content: flex-start;
-    gap: 3rem;
   }
 `;
 const MovieCard = ({ movie }) => {

@@ -6,13 +6,16 @@ const CardStyled = styled.div`
     display: none !important;
   }
   & .front {
-    color: whitesmoke;
     position: relative;
     border: solid 1px white;
     border-radius: 10px;
     box-shadow: 0 0 15px;
-    background-color: #466e85;
     width: 200px;
+    color: #000000;
+    :hover {
+      box-shadow: 0 0 15px 0 white;
+      transition: all 0.3s ease-in-out;
+    }
   }
   & .front > img {
     height: 250px;
@@ -42,10 +45,10 @@ const CardStyled = styled.div`
   }
   & .modal-container {
     display: flex;
+    color: white;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
     width: 40%;
     padding: 2rem;
     gap: 2rem;
@@ -72,10 +75,6 @@ const CardStyled = styled.div`
     background-color: #000000dd;
     border: 2px solid #33d6c9;
     border-radius: 5px;
-  }
-  & .imgmodalDiv {
-    justify-content: flex-start;
-    gap: 3rem;
   }
 `;
 const SeriesCard = ({ serie }) => {
